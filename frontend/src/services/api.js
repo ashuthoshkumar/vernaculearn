@@ -61,3 +61,24 @@ export async function awardBadge(userId, badge_key, badge_name, badge_icon) {
   const data = await res.json()
   return data
 }
+
+export async function getCertificate(userId, courseId) {
+  const res = await fetch(`${BASE_URL}/api/certificates/${userId}/${courseId}`)
+  const data = await res.json()
+  return data
+}
+
+export async function generateCertificate(userId, courseId, studentName, courseName) {
+  const res = await fetch(`${BASE_URL}/api/certificates/generate`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      user_id: userId,
+      course_id: courseId,
+      student_name: studentName,
+      course_name: courseName
+    })
+  })
+  const data = await res.json()
+  return data
+}

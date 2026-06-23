@@ -297,6 +297,14 @@ export default function CoursePage() {
                     className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all">
                     Next Lesson →
                   </button>
+
+                  {progressPercent === 100 && (
+                    <button
+                      onClick={() => navigate(`/certificate/${id}`)}
+                      className="bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all flex items-center gap-2">
+                      🎓 Get Certificate
+                    </button>
+                  )}
                 </div>
               </>
             )}

@@ -252,6 +252,13 @@ export default function Profile() {
                         🎉 Course Completed!
                       </div>
                     )}
+                    {course.percent === 100 && (
+                      <button
+                        onClick={(e) => { e.stopPropagation(); navigate(`/certificate/${course.id}`) }}
+                        className="mt-2 bg-yellow-500 hover:bg-yellow-600 text-white text-xs font-semibold px-4 py-1.5 rounded-xl transition-all">
+                        🎓 View Certificate
+                      </button>
+                    )}
                   </div>
                 ))
               )}

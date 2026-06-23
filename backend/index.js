@@ -7,6 +7,7 @@ const lessonRoutes = require('./src/routes/lessons')
 const progressRoutes = require('./src/routes/progress')
 const doubtRoutes = require('./src/routes/doubt')
 const gamificationRoutes = require('./src/routes/gamification')
+const certificateRoutes = require('./src/routes/certificates')
 
 const app = express()
 
@@ -18,6 +19,7 @@ app.use('/api/lessons', lessonRoutes)
 app.use('/api/progress', progressRoutes)
 app.use('/api/doubt', doubtRoutes)
 app.use('/api/gamification', gamificationRoutes)
+app.use('/api/certificates', certificateRoutes)
 
 app.get('/', (req, res) => {
   res.json({ message: 'VernacuLearn backend is live! 🚀' })

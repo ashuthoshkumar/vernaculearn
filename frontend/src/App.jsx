@@ -9,6 +9,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Profile from './pages/Profile'
 import ProtectedRoute from './components/ProtectedRoute'
+import Certificate from './pages/Certificate'
 
 function App() {
   const navigate = useNavigate()
@@ -41,6 +42,12 @@ function App() {
           <Profile />
         </ProtectedRoute>
       } />
+      <Route path="/certificate/:courseId" element={
+      <ProtectedRoute>
+        <Certificate />
+      </ProtectedRoute>
+      } />
+
     </Routes>
   )
 }
